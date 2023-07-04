@@ -1,7 +1,6 @@
 const Signup = require('../models/signups');
 const bcrypt = require('bcrypt');
-const fs = require('fs');
-const parse = require('node-html-parser').parse;
+
 
 async function getLogin(req, res, next) {
     await res.sendFile('login.html', { root: 'S:/mernstack-project/public/login' })
@@ -26,11 +25,11 @@ async function checkLogin(req,res){
       }
     }
     else{
-      res.redirect('http://localhost:3000/login').writeline('wrong');
+      res.redirect('http://localhost:3000/login');
     }
   }
   else{
-    res.redirect('http://localhost:3000/login').writeline('wrong');
+    res.redirect('http://localhost:3000/login');
   }
 
   }
